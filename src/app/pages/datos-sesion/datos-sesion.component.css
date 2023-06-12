@@ -1,0 +1,70 @@
+
+.h2{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.contenedor {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .borde {
+    border: 1px solid #d0d0d0;
+    padding: 20px;
+}
+
+/* .form-flex {
+    display: flex;
+    justify-content: center;
+    align-items: wrap;
+} */
+
+.btns-centrado {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .radio-flex {
+    display: flex;
+    justify-content: space-around;
+    /* align-items: wrap; */
+}
+
+/* Botones editar/eliminar*/
+
+
+.btns-flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-margin {
+  margin-right: 10px;
+}
+
+.btn-enviar {
+  margin-top: 70px;
+}
+
+.btn-agregar {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.mensaje-alerta {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.alerta {
+  font-size: 25px;
+  color: rgba(91, 8, 8, 0.717);
+  font-weight: bold;
+}
+
+
+
+
+

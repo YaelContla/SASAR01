@@ -1,0 +1,158 @@
+<div class="container">
+    <h1>-</h1>
+
+    <ul class="nav nav-tabs flex-tab1">
+        <li class="active">
+            <a data-toggle="tab" href="#tab-01"><br />Convocatoria <br /><br /></a>
+        </li>
+        <li>
+            <a data-toggle="tab" href="#tab-02" class="text-center">Confirmar el <br />
+                representante <br />
+                legal</a>
+        </li>
+        <!-- <li>
+            <a data-toggle="tab" href="#tab-03"><br />.................. <br /><br /></a>
+        </li> -->
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-01">
+            <form>
+                <div class="color">
+                    <h4>Propuesa Horario</h4>
+
+                    {{ugi}}
+
+                    <!-- <p class="seccion">UGI</p> -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Fecha</label>
+                                <input type="text" class="form-control" placeholder="12/06/2023" disabled />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputState">Horario</label>
+                                <select id="inputState" class="form-control" disabled>
+                                    <option selected>12:30 hrs</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{uaj}}
+                    <!-- <p class="seccion">UAJ</p> -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Fecha</label>
+                                <input type="text" class="form-control" placeholder="12/06/2023" disabled/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Horario</label>
+                                <select id="inputState" class="form-control" disabled>
+                                    <option selected>10:30 hrs</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputState">Tipo de Reunion<span class="text-danger">*</span></label>
+                                <select id="inputState" name="opcion" class="form-control" [(ngModel)]="opcion" (change)="opcionSeleccionadaOnChange()">
+                                    <option selected value="opcion1" >Virtual</option>
+                                    <option value="opcion2">Presencial</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6" *ngIf="opcion === 'opcion1'">
+                            <div class="form-group">
+                                <label for="inputState">Ingresa link y contraseña de sesión virtual<span class="text-danger">*</span></label>
+                                <div class="margin-presencial">
+                                    <div>
+                                        <label class="etiqueta" for="piso">Link Reunion:</label>
+                                        <input type="text" id="piso">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <label class="etiqueta-1" for="ala">Contraseña:</label>
+                                        <input type="text" id="ala">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        
+                          <div class="col-md-6" *ngIf="opcion === 'opcion2'">
+                              <div class="form-group">
+                                  <label for="inputState">Sesión presencial<span class="text-danger">*</span></label>
+                        
+                                  
+                                  <div class="margin-presencial">
+                                      <div>
+                                          <label class="etiqueta" for="piso">Piso:</label>
+                                      
+                                          <input type="text" id="piso">
+                                      </div>
+                                      <br>
+                                      <div>
+                                          <label class="etiqueta-1" for="ala">Ala:</label>
+                                      
+                                          <input type="text" id="ala">
+                                      </div>
+                                      <br>
+                                      <div>
+                                          <label class="etiqueta" for="sala">Sala:</label>
+                        
+                                          <input type="text" id="sala">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                    </div>
+                </div>
+
+                <div class="row margen color">
+                   
+                        <h4>Hora de sesión definitiva</h4>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Fecha <span class="text-danger">*</span></label>
+                                <input type="date" class="form-control" aria-describedby="emailHelp"
+                                    placeholder="Nombre (s)" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="inputState">Horario <span class="text-danger">*</span></label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Selecciona una hora</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-end">
+                    <button class="btn btn-primary text-center " type="submit">Enviar</button>
+                    </div>
+                
+            </form>
+        </div>
+
+        <div class="tab-pane" id="tab-02">tab 2</div>
+
+        <div class="tab-pane" id="tab-03">tab 3</div>
+    </div>
+    <h1>-</h1>
+</div>

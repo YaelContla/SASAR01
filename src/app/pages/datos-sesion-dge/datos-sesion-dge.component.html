@@ -1,0 +1,190 @@
+<h1>-</h1>
+
+<div class="container border mt-5">
+    <h2 class="h2">Datos de registro</h2>
+
+  <div class="borde">
+    <form class="row g-3">
+      <div class="col-md-6 py-4">
+        <div class="form-group">
+          <label for="exampleInputEmail1"
+            >Fecha <span class="text-danger">*</span></label
+          >
+          <input
+            type="date"
+            class="form-control"
+            aria-describedby="emailHelp"
+            placeholder="Nombre (s)"
+          />
+        </div>
+      </div>
+  
+      <div class="col-md-6 py-4">
+        <div class="form-group">
+          <label for="inputState"
+            >Horario <span class="text-danger">*</span></label
+          >
+          <select id="inputState" class="form-control">
+            <option selected>Selecciona una hora</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </div>
+  
+   <!--  -->
+
+  <div class="col-md-6">
+      <div class="form-group">
+          <label for="inputState">Tipo de Reunion<span class="text-danger">*</span></label>
+          <select id="inputState" name="opcion" class="form-control" [(ngModel)]="opcion" (change)="opcionSeleccionadaOnChange()">
+              <option selected value="opcion1" >Virtual</option>
+              <option value="opcion2">Presencial</option>
+          </select>
+      </div>
+  </div>
+
+  <div class="col-md-6" *ngIf="opcion === 'opcion1'">
+    <div class="form-group">
+        <label for="inputState">Ingresa link y contraseña de sesión virtual<span class="text-danger">*</span></label>
+        <div class="margin-presencial">
+            <div>
+                <label class="etiqueta" for="piso">Link Reunion:</label>
+                <input type="text" id="piso">
+            </div>
+            <br>
+            <div>
+                <label class="etiqueta-1" for="ala">Contraseña:</label>
+                <input type="text" id="ala">
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-6" *ngIf="opcion === 'opcion2'">
+      <div class="form-group">
+          <label for="inputState">Sesión presencial<span class="text-danger">*</span></label>
+
+          
+          <div class="margin-presencial">
+              <div>
+                  <label class="etiqueta" for="piso">Piso:</label>
+              
+                  <input type="text" id="piso">
+              </div>
+              <br>
+              <div>
+                  <label class="etiqueta-1" for="ala">Ala:</label>
+              
+                  <input type="text" id="ala">
+              </div>
+              <br>
+              <div>
+                  <label class="etiqueta" for="sala">Sala:</label>
+
+                  <input type="text" id="sala">
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+    <!--  -->
+      
+  
+      <div class="row radio-flex">
+        <div class="col-12">
+          <label>
+            <input
+              type="radio"
+              name="reunion"
+              value="reunion"
+            />
+            Sesión Informativa
+          </label>
+        </div>
+        
+      </div>
+  
+      <div class="row ">
+        <div class="col-12">
+          <h4 class="text-center">
+            Personal de la(s) Unidad(es) Responsable(s) que atenderá la reunión o audiencia.
+          </h4>
+          <p class="text-center">(Maximo 8 personas)</p>
+        </div>
+      </div>
+
+    </form>
+  
+    
+    
+    
+      
+  
+  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Nombre completo</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios; let  i = index" >
+          <!-- <th scope="row">{{usuario.id}}</th> -->
+          <td>{{usuario}}</td>
+          <td>
+            <div class="btns-flex">
+              <div class="btn-margin">
+              </div>
+              <button class="btn btn-primary btn-sm" type="button" (click)="eliminarUsuario(usuario)">
+                Eliminar
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <select [(ngModel)]="selectedOption" class="form-control margin-select">
+      <option value="">Selecciona a un participante</option>
+      <option value="Carlos ballarta">Carlos Ballarta</option>
+      <option value="Raul Jimenez">Raul Jimenez</option>
+      <option value="Santiago Gimenez">Santiago Gimenez</option>
+      <option value="Matias Cervantes">Matias Cervantes</option>
+      <option value="Luis Cortez">Luis Cortez</option>
+      <option value="Maria Bernal">Maria Bernal</option>
+      <option value="Rosario Meneses">Rosario Meneses</option>
+      <option value="Pedro Aquino">Pedro Aquino</option>
+    </select>
+    
+    <div class="mensaje-alerta"  *ngIf="usuarios.length >= 8">
+      <p class="alerta">No se pueden agregar más de 8 participantes</p>
+    </div>
+    
+    
+    <button type="button" class="btn btn-primary btn-agregar" (click)="agregarUsuario()">Agregar</button>
+
+    
+        <div class="checkbox">
+            <label>
+              <input type="checkbox" value="declaro">
+              Declaro que los datos para llevar a acabo la reunión son correctos y tengo el conocimiento de que estos no podrán ser modificados una vez que sean agendados.
+            </label>
+        </div>
+
+  
+    <div class="form-group btn-margen">
+      <div class="col-sm-offset-3 col-sm-9">
+        <button class="btn btn-primary pull-right" type="submit">Enviar</button>
+      </div>
+  </div>
+
+</div>
+
+<h1>-</h1>
+  
+  
